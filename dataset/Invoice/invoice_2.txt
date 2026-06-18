@@ -1,0 +1,5 @@
+DOCUMENT TYPE: INVOICE
+ID: DOC-INV-0001
+========================================
+
+Receipt for services. Consulting fees $500. Development work 20 hours at rate $50 per hour. Total amount due $1500.

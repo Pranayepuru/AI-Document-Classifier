@@ -1,0 +1,5 @@
+DOCUMENT TYPE: INVOICE
+ID: DOC-INV-0002
+========================================
+
+Billing Statement invoice #88902. Customer ID: 991. Description: Cloud subscription monthly fee. Total cost $99.99.

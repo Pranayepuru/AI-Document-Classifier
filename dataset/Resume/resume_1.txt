@@ -1,0 +1,5 @@
+DOCUMENT TYPE: RESUME
+ID: DOC-RES-0000
+========================================
+
+Experienced software engineer with 5 years in python django flask postgresql docker. Managed team of 3 devs.

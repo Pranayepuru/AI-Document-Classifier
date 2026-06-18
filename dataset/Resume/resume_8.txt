@@ -1,0 +1,5 @@
+DOCUMENT TYPE: RESUME
+ID: DOC-RES-0007
+========================================
+
+Systems administrator managing Windows and Linux servers, active directory, network configuration, and security audits.

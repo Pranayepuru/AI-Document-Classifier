@@ -1,0 +1,5 @@
+DOCUMENT TYPE: REPORT
+ID: DOC-REP-0003
+========================================
+
+Operations and efficiency report. Analysis of manufacturing pipeline indicates 5% bottle-neck in packaging division.

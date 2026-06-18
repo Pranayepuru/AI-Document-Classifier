@@ -1,0 +1,5 @@
+DOCUMENT TYPE: RESEARCH
+ID: DOC-RES-0006
+========================================
+
+Quantum entanglement and decoherence in superconducting qubits. We analyze the noise spectrum under cryogenic conditions.

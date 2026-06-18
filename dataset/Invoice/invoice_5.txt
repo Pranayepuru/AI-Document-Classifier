@@ -1,0 +1,5 @@
+DOCUMENT TYPE: INVOICE
+ID: DOC-INV-0004
+========================================
+
+Purchase order and invoice invoice-992. Vendor: TechSolutions. Items ordered: 5x office desk chairs. Total amount: $750. Please remit payment.

@@ -1,0 +1,5 @@
+DOCUMENT TYPE: RESEARCH
+ID: DOC-RES-0003
+========================================
+
+Literature review. We review historical approaches to distributed consensus protocols, highlighting limitations of Paxos.

@@ -1,0 +1,5 @@
+DOCUMENT TYPE: INVOICE
+ID: DOC-INV-0006
+========================================
+
+Service Invoice. Consultant: Jane Smith. Project: Database optimization. Total hours: 10. Rate: $120/hr. Amount due: $1200.00.

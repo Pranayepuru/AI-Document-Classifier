@@ -1,0 +1,5 @@
+DOCUMENT TYPE: INVOICE
+ID: DOC-INV-0005
+========================================
+
+TAX INVOICE. Sold by RetailGenius. Bill to: John Doe. Item: Smart watch $199. Shipping: $10. Total paid: $209.

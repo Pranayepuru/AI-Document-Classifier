@@ -1,0 +1,5 @@
+DOCUMENT TYPE: RESEARCH
+ID: DOC-RES-0002
+========================================
+
+Discussion and analysis of findings. Experimental results show 98.4% accuracy, outperforming baseline models by a margin.

@@ -1,0 +1,5 @@
+DOCUMENT TYPE: RESEARCH
+ID: DOC-RES-0004
+========================================
+
+Hypothesis: Carbon nanotubes exhibit higher tensile strength when doped with boron. We present structural simulations.

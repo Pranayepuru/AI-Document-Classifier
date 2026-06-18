@@ -1,0 +1,5 @@
+DOCUMENT TYPE: RESUME
+ID: DOC-RES-0003
+========================================
+
+Data scientist skilled in machine learning deep learning numpy pandas scikit-learn pytorch. Experience with SQL and Tableau.

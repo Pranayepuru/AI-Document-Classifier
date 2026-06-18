@@ -1,0 +1,5 @@
+DOCUMENT TYPE: INVOICE
+ID: DOC-INV-0000
+========================================
+
+Invoice number 10243. Bill to Acma Corp. Due date July 2026. Total balance $1250.00. Payment method bank transfer.

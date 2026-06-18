@@ -1,0 +1,5 @@
+DOCUMENT TYPE: RESUME
+ID: DOC-RES-0001
+========================================
+
+Junior developer seeking entry-level position. Strong javascript html css frontend skills. Projects in react.

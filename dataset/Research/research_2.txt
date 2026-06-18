@@ -1,0 +1,5 @@
+DOCUMENT TYPE: RESEARCH
+ID: DOC-RES-0001
+========================================
+
+Introduction: Previous literature has shown significant correlation between sleep patterns and cognitive performance in students.

@@ -1,0 +1,5 @@
+DOCUMENT TYPE: LEGAL
+ID: DOC-LEG-0002
+========================================
+
+Intellectual property clause. All code, designs, and documentation created during employment are sole property of the Employer.

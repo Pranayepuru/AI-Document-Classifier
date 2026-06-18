@@ -1,0 +1,5 @@
+DOCUMENT TYPE: REPORT
+ID: DOC-REP-0007
+========================================
+
+Annual IT infrastructure audit report. Recommendations for cloud migration and upgrading firewall security.

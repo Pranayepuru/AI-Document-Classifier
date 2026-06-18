@@ -1,0 +1,5 @@
+DOCUMENT TYPE: RESUME
+ID: DOC-RES-0004
+========================================
+
+DevOps engineer expert in AWS GCP Docker Kubernetes CI/CD pipelines Jenkins Terraform. Passionate about automation.

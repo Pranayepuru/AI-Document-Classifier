@@ -1,0 +1,5 @@
+DOCUMENT TYPE: RESEARCH
+ID: DOC-RES-0007
+========================================
+
+An econometric analysis of inflation rates and interest rates in developing economies. Methodology and regression results.

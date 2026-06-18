@@ -1,0 +1,5 @@
+DOCUMENT TYPE: INVOICE
+ID: DOC-INV-0007
+========================================
+
+Invoice #099382. Client: Globex. Description of work: Security audit and penetration testing. Total: $5000. Net 30 terms.

@@ -1,0 +1,31 @@
+{
+    "training_timestamp": 1781771201.0218008,
+    "total_documents": 60,
+    "categories_count": 6,
+    "categories": [
+        "Resume",
+        "Letter",
+        "Report",
+        "Invoice",
+        "Research",
+        "Legal"
+    ],
+    "best_model": "Logistic Regression",
+    "accuracy": 100.0,
+    "f1_score": 100.0,
+    "models_comparison": {
+        "NaiveBayes": {
+            "accuracy": 100.0,
+            "precision": 100.0,
+            "recall": 100.0,
+            "f1_score": 100.0
+        },
+        "LogisticRegression": {
+            "accuracy": 100.0,
+            "precision": 100.0,
+            "recall": 100.0,
+            "f1_score": 100.0
+        }
+    },
+    "training_time_seconds": 0.2032
+}

@@ -1,0 +1,5 @@
+DOCUMENT TYPE: LETTER
+ID: DOC-LET-0007
+========================================
+
+Dear Dr. Watson, Thank you for referring Mr. Holmes to our clinic. We have scheduled his appointment for next Tuesday.

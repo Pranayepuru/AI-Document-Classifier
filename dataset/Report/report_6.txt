@@ -1,0 +1,5 @@
+DOCUMENT TYPE: REPORT
+ID: DOC-REP-0005
+========================================
+
+Customer satisfaction survey report. Feedback from 1000 users shows 88% approval rating. Areas of improvement: load times.

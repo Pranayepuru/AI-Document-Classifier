@@ -1,0 +1,62 @@
+[
+    {
+        "id": "1781773599",
+        "timestamp": "2026-06-18 14:36:39",
+        "filename": "bhanu.pdf",
+        "saved_filename": "1781773599_bhanu.pdf",
+        "prediction": "Report",
+        "confidence": 26.67,
+        "processing_time": 0.2997,
+        "preview": "SRM Institute of Science and Technology School\nof Computing\nDepartment of Computing Technologies\n21DCS201P DESIGN THINKING &\nMETHODOLOGY\nREPORT\nName of the Student : D Bhanu prasad\nRegister Number : RA2411003011339\nSection : A2\nClass : II B.Tech CSE (CORE)\nAcademic Year / Sem : 2025-2026 (EVEN) / IV..."
+    },
+    {
+        "id": "1781773532",
+        "timestamp": "2026-06-18 14:35:33",
+        "filename": "2099720890EP.pdf",
+        "saved_filename": "1781773532_2099720890EP.pdf",
+        "prediction": "Invoice",
+        "confidence": 23.22,
+        "processing_time": 1.1574,
+        "preview": "Epuru Pranay\nPHIL102: Introduction to Critical Thinking and Logic\nMarch 25, 2026\n2099720890EP\nEpuru Pranay\nPHIL102: Introduction to Critical Thinking and Logic\nMarch 25, 2026\n2099720890EP\n29 Hours\n2.9\n93.02 %\nPowered by TCPDF (www.tcpdf.org)"
+    },
+    {
+        "id": "1781771147",
+        "timestamp": "2026-06-18 13:55:47",
+        "filename": "bhanu.docx",
+        "saved_filename": "1781771147_bhanu.docx",
+        "prediction": "Report",
+        "confidence": 26.67,
+        "processing_time": 0.0482,
+        "preview": "SRM Institute of Science and Technology School of Computing\nDepartment of Computing Technologies\n21DCS201P DESIGN THINKING & METHODOLOGY\nREPORT\nName of the Student\t:\tD Bhanu prasad \nRegister Number\t :\t\tRA2411003011339\nSection\t:\tA2\nClass\t:\t II B.Tech CSE (CORE) Academic Year / Sem\t:\t2025-2026 (EVEN) ..."
+    },
+    {
+        "id": "1781770826",
+        "timestamp": "2026-06-18 13:50:26",
+        "filename": "E.Pranay_Resume.pdf",
+        "saved_filename": "1781770826_E.Pranay_Resume.pdf",
+        "prediction": "Resume",
+        "confidence": 19.61,
+        "processing_time": 0.1829,
+        "preview": "EPURU PRANAY\n+91 8520840565\nChennai, Tamil Nadu, India\nepurupranay@gmail.com | pe8235@srmist.edu.in\nGitHub | LinkedIn\nEducation\nSRM University, KTR, Chennai 2024 \u2013 2028\nB.Tech Computer Science Engineering\nCGPA: 8.22\nSkills\nProgramming Languages: C, C++, Python, Java (Basic)\nTechnical Skills: MySQL, ..."
+    },
+    {
+        "id": "1781770804",
+        "timestamp": "2026-06-18 13:50:04",
+        "filename": "E.Pranay_Resume.pdf",
+        "saved_filename": "1781770804_E.Pranay_Resume.pdf",
+        "prediction": "Resume",
+        "confidence": 19.61,
+        "processing_time": 0.2202,
+        "preview": "EPURU PRANAY\n+91 8520840565\nChennai, Tamil Nadu, India\nepurupranay@gmail.com | pe8235@srmist.edu.in\nGitHub | LinkedIn\nEducation\nSRM University, KTR, Chennai 2024 \u2013 2028\nB.Tech Computer Science Engineering\nCGPA: 8.22\nSkills\nProgramming Languages: C, C++, Python, Java (Basic)\nTechnical Skills: MySQL, ..."
+    },
+    {
+        "id": "1781770432",
+        "timestamp": "2026-06-18 13:43:53",
+        "filename": "bhanu.docx",
+        "saved_filename": "1781770432_bhanu.docx",
+        "prediction": "Report",
+        "confidence": 26.67,
+        "processing_time": 0.6912,
+        "preview": "SRM Institute of Science and Technology School of Computing\nDepartment of Computing Technologies\n21DCS201P DESIGN THINKING & METHODOLOGY\nREPORT\nName of the Student\t:\tD Bhanu prasad \nRegister Number\t :\t\tRA2411003011339\nSection\t:\tA2\nClass\t:\t II B.Tech CSE (CORE) Academic Year / Sem\t:\t2025-2026 (EVEN) ..."
+    }
+]

@@ -1,0 +1,5 @@
+DOCUMENT TYPE: REPORT
+ID: DOC-REP-0001
+========================================
+
+Annual market analysis report. Competitive analysis shows new entrants in AI space. Recommendations include product pivot.

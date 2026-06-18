@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Document Classifier - Advanced ML Dashboard</title>
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    
+    <!-- Chart.js -->
+    <script href="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <!-- Wait, Chart.js source should be script tag src not href -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg sticky-top">
+        <div class="container">
+            <a class="navbar-brand d-flex align-items-center" href="/">
+                <div class="brand-logo me-2">
+                    <i class="fa-solid fa-brain text-primary fs-3"></i>
+                </div>
+                <div>
+                    <span class="brand-title">Antigravity AI</span>
+                    <small class="brand-subtitle d-block">Document Engine</small>
+                </div>
+            </a>
+            
+            <div class="d-flex align-items-center ms-auto">
+                <!-- Retrain Button -->
+                <button class="btn btn-outline-primary btn-sm me-3" id="btn-retrain" title="Retrain ML Models on current dataset">
+                    <i class="fa-solid fa-arrows-rotate me-1" id="retrain-icon"></i> Retrain Model
+                </button>
+                
+                <!-- Dark Mode Toggle -->
+                <div class="theme-toggle" id="theme-toggle-btn" title="Toggle dark mode">
+                    <i class="fa-solid fa-moon text-secondary fs-4" id="theme-icon"></i>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Header Section -->
+    <header class="hero-section text-center py-5">
+        <div class="container">
+            <h1 class="display-5 fw-extrabold header-title">AI Document Classifier</h1>
+            <p class="lead text-muted mx-auto header-desc" style="max-width: 600px;">
+                Upload a document and classify it instantly into categories (Resume, Invoice, Report, Letter, Legal, Research) with high confidence.
+            </p>
+        </div>
+    </header>
+
+    <main class="container mb-5">
+        <!-- Stats Cards Section -->
+        <section class="row g-4 mb-5" id="stats-section">
+            <div class="col-md-3 col-sm-6">
+                <div class="stat-card p-4 card-glow shadow-sm h-100">
+                    <div class="d-flex justify-content-between align-items-center mb-3">
+                        <span class="stat-title">Processed</span>
+                        <div class="stat-icon-bg bg-primary-subtle text-primary">
+                            <i class="fa-solid fa-file-invoice"></i>
+                        </div>
+                    </div>
+                    <h3 class="stat-value" id="stat-total-processed">0</h3>
+                    <p class="stat-desc mb-0">Total classified documents</p>
+                </div>
+            </div>
+            <div class="col-md-3 col-sm-6">
+                <div class="stat-card p-4 card-glow shadow-sm h-100">
+                    <div class="d-flex justify-content-between align-items-center mb-3">
+                        <span class="stat-title">Active Model</span>
+                        <div class="stat-icon-bg bg-success-subtle text-success">
+                            <i class="fa-solid fa-gears"></i>
+                        </div>
+                    </div>
+                    <h3 class="stat-value fs-5" id="stat-model-name">Loading...</h3>
+                    <p class="stat-desc mb-0" id="stat-model-acc">Accuracy: --%</p>
+                </div>
+            </div>
+            <div class="col-md-3 col-sm-6">
+                <div class="stat-card p-4 card-glow shadow-sm h-100">
+                    <div class="d-flex justify-content-between align-items-center mb-3">
+                        <span class="stat-title">Categories</span>
+                        <div class="stat-icon-bg bg-info-subtle text-info">
+                            <i class="fa-solid fa-tags"></i>
+                        </div>
+                    </div>
+                    <h3 class="stat-value" id="stat-categories-count">6</h3>
+                    <p class="stat-desc mb-0">Supported document classes</p>
+                </div>
+            </div>
+            <div class="col-md-3 col-sm-6">
+                <div class="stat-card p-4 card-glow shadow-sm h-100">
+                    <div class="d-flex justify-content-between align-items-center mb-3">
+                        <span class="stat-title">Dataset Size</span>
+                        <div class="stat-icon-bg bg-warning-subtle text-warning">
+                            <i class="fa-solid fa-folder-open"></i>
+                        </div>
+                    </div>
+                    <h3 class="stat-value" id="stat-dataset-size">--</h3>
+                    <p class="stat-desc mb-0">Total training samples</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Main Workspace Grid -->
+        <div class="row g-4 mb-5">
+            <!-- Left Side: Upload & Results -->
+            <div class="col-lg-6">
+                <!-- File Upload Card -->
+                <div class="content-card p-4 shadow-sm mb-4">
+                    <h4 class="card-section-title mb-3">
+                        <i class="fa-solid fa-cloud-arrow-up text-primary me-2"></i>Analyze Document
+                    </h4>
+                    
+                    <!-- Drag & Drop Zone -->
+                    <div class="upload-zone text-center p-5 mb-3" id="drop-zone">
+                        <input type="file" id="file-input" class="d-none" accept=".txt,.pdf,.docx">
+                        <div class="upload-icon-wrapper mb-3">
+                            <i class="fa-solid fa-file-pdf text-danger mx-1 fs-3"></i>
+                            <i class="fa-solid fa-file-word text-primary mx-1 fs-2"></i>
+                            <i class="fa-solid fa-file-lines text-secondary mx-1 fs-3"></i>
+                        </div>
+                        <h5>Drag & drop your document here</h5>
+                        <p class="text-muted small">Supports PDF, DOCX, and TXT files (Max 16MB)</p>
+                        <button class="btn btn-primary btn-md px-4 mt-2" onclick="document.getElementById('file-input').click()">
+                            Browse Files
+                        </button>
+                    </div>
+
+                    <!-- File Details / Progress -->
+                    <div id="file-info-box" class="d-none p-3 border rounded mb-3">
+                        <div class="d-flex align-items-center justify-content-between mb-2">
+                            <div class="d-flex align-items-center">
+                                <i id="file-icon" class="fa-solid fa-file text-secondary fs-4 me-3"></i>
+                                <div>
+                                    <h6 class="mb-0 text-truncate" id="file-name-label" style="max-width: 280px;">filename.pdf</h6>
+                                    <span class="text-muted small" id="file-size-label">0 KB</span>
+                                </div>
+                            </div>
+                            <button class="btn btn-link text-danger p-0" id="btn-cancel-upload" title="Clear selection">
+                                <i class="fa-solid fa-xmark fs-5"></i>
+                            </button>
+                        </div>
+                        <div class="progress" style="height: 6px;">
+                            <div id="upload-progress-bar" class="progress-bar progress-bar-striped progress-bar-animated bg-primary" role="progressbar" style="width: 0%"></div>
+                        </div>
+                        <small class="text-muted mt-1 d-block text-end" id="progress-percent">0%</small>
+                    </div>
+
+                    <button class="btn btn-gradient-primary w-100 py-2.5 d-none" id="btn-classify">
+                        <i class="fa-solid fa-magnifying-glass-chart me-1"></i> Classify Document
+                    </button>
+                </div>
+
+                <!-- Analysis Results Card -->
+                <div class="content-card p-4 shadow-sm d-none" id="result-card">
+                    <div class="d-flex justify-content-between align-items-center mb-3">
+                        <h4 class="card-section-title mb-0">
+                            <i class="fa-solid fa-circle-check text-success me-2"></i>Analysis Results
+                        </h4>
+                        <span class="badge bg-secondary-subtle text-secondary" id="result-time">0.02s</span>
+                    </div>
+
+                    <div class="result-box p-4 rounded text-center mb-4">
+                        <span class="result-label d-block text-uppercase tracking-wider small mb-1">Predicted Category</span>
+                        <h2 class="result-category display-6 fw-bold mb-3 text-primary" id="result-category-val">Resume</h2>
+                        
+
+                    </div>
+
+                    <!-- Details Accordion/List -->
+                    <div class="list-group list-group-flush mb-4">
+                        <div class="list-group-item bg-transparent px-0 py-2 d-flex justify-content-between align-items-center">
+                            <span class="text-muted"><i class="fa-regular fa-file me-2"></i>File Name</span>
+                            <span class="fw-medium text-truncate" id="result-filename-val" style="max-width: 250px;">my_resume.pdf</span>
+                        </div>
+                        <div class="list-group-item bg-transparent px-0 py-2">
+                            <span class="text-muted d-block mb-1"><i class="fa-solid fa-align-left me-2"></i>Extracted Text Preview</span>
+                            <div class="p-3 border rounded bg-light-subtle text-muted small text-start font-monospace preview-textarea" id="result-text-preview">
+                                Text preview goes here...
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row g-2">
+                        <div class="col-12">
+                            <button id="btn-clear-results" class="btn btn-secondary w-100 py-2">
+                                <i class="fa-solid fa-trash-can me-1"></i> Clear Results
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Right Side: Visual Charts -->
+            <div class="col-lg-6">
+                <!-- Visual Charts Card -->
+                <div class="content-card p-4 shadow-sm h-100">
+                    <h4 class="card-section-title mb-4">
+                        <i class="fa-solid fa-chart-line text-primary me-2"></i>Analytics Insights
+                    </h4>
+                    
+                    <div class="row g-4">
+                        <!-- Chart 1: Pie Distribution -->
+                        <div class="col-md-6 text-center">
+                            <h6 class="chart-title text-muted mb-3">Category Distribution</h6>
+                            <div class="chart-container mx-auto" style="position: relative; height: 180px; width: 180px;">
+                                <canvas id="chart-distribution"></canvas>
+                            </div>
+                        </div>
+                        <!-- Chart 2: Bar Confidence -->
+                        <div class="col-md-6 text-center">
+                            <h6 class="chart-title text-muted mb-3">Model Accuracy Comparison</h6>
+                            <div class="chart-container mx-auto" style="position: relative; height: 180px;">
+                                <canvas id="chart-models"></canvas>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Analytics Summary list -->
+                    <div class="mt-4 p-3 rounded bg-light-subtle">
+                        <h6 class="text-dark fw-bold mb-2 small"><i class="fa-solid fa-circle-info text-primary me-1"></i>ML Performance Insights</h6>
+                        <ul class="list-unstyled mb-0 small text-muted">
+                            <li class="mb-1"><i class="fa-solid fa-circle-dot text-primary me-1 fs-xs"></i> Multinomial Naive Bayes performs exceptionally fast for high-dimensional document features.</li>
+                            <li><i class="fa-solid fa-circle-dot text-primary me-1 fs-xs"></i> Logistic Regression is utilized for higher accuracy and better confidence calibration.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Bottom: History & Search -->
+        <section class="row">
+            <div class="col-12">
+                <div class="content-card p-4 shadow-sm">
+                    <div class="d-flex flex-column flex-md-row justify-content-between align-items-md-center mb-4 gap-3">
+                        <h4 class="card-section-title mb-0">
+                            <i class="fa-solid fa-clock-rotate-left text-primary me-2"></i>Prediction History
+                        </h4>
+                        
+                        <div class="d-flex gap-2">
+                            <!-- Search -->
+                            <div class="input-group input-group-sm" style="max-width: 250px;">
+                                <span class="input-group-text bg-transparent border-end-0">
+                                    <i class="fa-solid fa-magnifying-glass text-muted"></i>
+                                </span>
+                                <input type="text" id="search-history" class="form-control border-start-0" placeholder="Search predictions...">
+                            </div>
+                            
+                            <!-- Export -->
+                            <a href="/export_history" class="btn btn-outline-success btn-sm d-flex align-items-center">
+                                <i class="fa-solid fa-file-csv me-1"></i> Export CSV
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- History Table -->
+                    <div class="table-responsive">
+                        <table class="table table-hover align-middle" id="history-table">
+                            <thead class="table-light">
+                                <tr>
+                                    <th scope="col" style="width: 25%">Timestamp</th>
+                                    <th scope="col" style="width: 50%">File Name</th>
+                                    <th scope="col" style="width: 25%">Predicted Category</th>
+                                </tr>
+                            </thead>
+                            <tbody id="history-tbody">
+                                <tr>
+                                    <td colspan="3" class="text-center py-4 text-muted">
+                                        <i class="fa-regular fa-folder-open d-block fs-3 mb-2"></i>
+                                        No recent predictions found. Upload a document to start.
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <!-- Pagination / Footer Info -->
+                    <div class="d-flex justify-content-between align-items-center mt-3 text-muted small">
+                        <span id="history-counter">Showing 0 predictions</span>
+                        <div class="btn-group btn-group-sm" id="history-pagination">
+                            <!-- Handled dynamically -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Toast Notification for training / alert -->
+    <div class="toast-container position-fixed bottom-0 end-0 p-3">
+        <div id="status-toast" class="toast" role="alert" aria-live="assertive" aria-atomic="true">
+            <div class="toast-header">
+                <i class="fa-solid fa-bell text-primary me-2"></i>
+                <strong class="me-auto" id="toast-title">Notification</strong>
+                <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
+            </div>
+            <div class="toast-body" id="toast-body">
+                Success
+            </div>
+        </div>
+    </div>
+
+    <!-- Bootstrap Bundle JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    
+    <!-- Custom JS -->
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>

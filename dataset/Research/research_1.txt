@@ -1,0 +1,5 @@
+DOCUMENT TYPE: RESEARCH
+ID: DOC-RES-0000
+========================================
+
+Abstract: This research paper proposes a novel convolutional neural network architecture for image segmentation. Methodology and results.

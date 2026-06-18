@@ -1,0 +1,5 @@
+DOCUMENT TYPE: INVOICE
+ID: DOC-INV-0009
+========================================
+
+Commercial Invoice. Exporter: EuroTech. Importer: USDistributors. Goods: Industrial parts. Total Value: $8500.00.

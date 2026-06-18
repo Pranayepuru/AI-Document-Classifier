@@ -1,0 +1,5 @@
+DOCUMENT TYPE: RESEARCH
+ID: DOC-RES-0009
+========================================
+
+Security vulnerability analysis of smart contract systems on decentralized blockchains. We identify reentrancy exploits.

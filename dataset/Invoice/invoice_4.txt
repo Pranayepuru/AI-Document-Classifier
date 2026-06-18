@@ -1,0 +1,5 @@
+DOCUMENT TYPE: INVOICE
+ID: DOC-INV-0003
+========================================
+
+Invoice IN-2026-004. Date: 2026-06-18. Items: Laptop repair service, memory upgrade. Subtotal: $300. Tax: $24. Grand Total: $324.

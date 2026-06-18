@@ -1,0 +1,5 @@
+DOCUMENT TYPE: INVOICE
+ID: DOC-INV-0008
+========================================
+
+Subscription Invoice. Product: Enterprise SaaS License. Billing cycle: Annual. Total Price: $12000. Paid via Credit Card.
