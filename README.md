@@ -80,27 +80,6 @@ Start the Flask development server:
 ```bash
 python app.py
 ```
-
-
----
-
-## 📊 API Reference
-
-The project exposes a JSON REST API for integration:
-
-### Classify Document
-- **Endpoint**: `/api/predict`
-- **Method**: `POST`
-- **Payload**: Form-data with key `file` containing the document file.
-- **Response**:
-```json
-{
-  "filename": "my_resume.pdf",
-  "prediction": "Resume",
-  "confidence": "96.4%"
-}
-```
-
 ---
 
 ## ☁️ Deployment Guide
